@@ -1,5 +1,12 @@
 const moveZeroes = function (nums) {
-  //Start coding here
+  let temp=[]
+  let num0=[]
+  for (let i =0;i<nums.length;i++){
+    if (nums[i] === 0 ){
+      num0.push(0)
+    }else temp.push(nums[i])
+  }
+  return [...temp,...num0]
 };
 
 const result1 = moveZeroes([0, 1, 0, 3, 12]);
