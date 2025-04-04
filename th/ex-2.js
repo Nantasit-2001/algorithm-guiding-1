@@ -1,5 +1,21 @@
 const romanToInt = function (s) {
-  //Start coding here
+  const roman = { I:1,
+                  V:5,
+                  X:10,
+                  L:50,
+                  C:100,
+                  D:500,
+                  M:1000,
+  }
+  const tempRomanValue = []
+  for(let i =0 ;i<s.length;i++){
+    if (roman[s[i+1]] > roman[s[i]]){
+      tempRomanValue.push(roman[s[i+1]]-roman[s[i]])
+      i+=1
+    }
+   else {tempRomanValue.push(roman[s[i]])}
+  }
+  return (tempRomanValue.reduce((value,ccs)=>ccs+=value))
 };
 
 const result1 = romanToInt("III"); // 3
